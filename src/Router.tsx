@@ -1,7 +1,7 @@
 import { Route } from "react-router";
-import { HomePage } from "./Pages/Home";
+import { HomePage } from "./pages/Home";
 import { Routes } from "react-router-dom";
-import { Register } from "./Pages/Cadastro";
+import { Register } from "./pages/Cadastro";
 export function Router() {
     return(
         <Routes>
