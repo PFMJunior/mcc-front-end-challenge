@@ -16,6 +16,7 @@ export type ImageProps = {
 
 export type UserNameProps = {
     username : string
+    password?: string
 }
 
 export type Data = {
@@ -29,4 +30,20 @@ export type Data = {
 
 export type UserProsp = {
     data : Data[]
+}
+
+export type LoginProps = {
+    email   : string
+    login   : UserNameProps
+}
+
+export type NewUserProps = {
+    name: {
+        first: string;
+        last: string;
+    };
+    email: string;
+    login: {
+        password: string;
+    };
 }
