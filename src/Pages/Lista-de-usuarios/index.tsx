@@ -3,9 +3,13 @@ import { useEffect, useState } from "react";
 import { fetchData } from "../../services/api";
 import { ListUser } from "../../components/ListUser";
 
+interface ErrorProps {
+    message : string
+}
+
 export function UsersList() {
     const [data, setData]       = useState([]);
-    const [error, setError]     = useState<string | null | unknown>(null);
+    const [error, setError]     = useState<ErrorProps | null>(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -13,8 +17,15 @@ export function UsersList() {
             try {
                 const result = await fetchData();
                 setData(result);
-            } catch (err) {
-                setError(err);
+            } catch (error) {
+                // setError(err);
+                if (error instanceof Error) {
+                    setError({ message: error.message });
+                } else if (typeof error === 'string') {
+                    setError({ message: error });
+                } else {
+                    setError({ message: 'Ocorreu um erro desconhecido.' });
+                }
             } finally {
                 setLoading(false);
             }
@@ -24,7 +35,7 @@ export function UsersList() {
     }, []);
     console.log("data", data)
 
-    if (loading) return <p>Carregando...</p>;
+    if (loading) return <p className={styles.loading}>Carregando...</p>;
     if (error) return <p>Erro: {error.message}</p>;
 
     return(
