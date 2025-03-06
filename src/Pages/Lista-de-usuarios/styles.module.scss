@@ -17,6 +17,16 @@
     }
 }
 
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    color: var(--white);
+    font-size: 2rem;
+}
+
 
 @media only screen and (max-width: 1024px) {
     .listUsers {
