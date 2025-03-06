@@ -1,22 +1,36 @@
 import styles from "./styles.module.scss";
+import { useEffect, useState } from "react";
+import { fetchData } from "../../services/api";
+import { ListUser } from "../../components/ListUser";
 
 export function UsersList() {
+    const [data, setData]       = useState([]);
+    const [error, setError]     = useState<string | null | unknown>(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const loadData = async () => {
+            try {
+                const result = await fetchData();
+                setData(result);
+            } catch (err) {
+                setError(err);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        loadData();
+    }, []);
+    console.log("data", data)
+
+    if (loading) return <p>Carregando...</p>;
+    if (error) return <p>Erro: {error.message}</p>;
+
     return(
         <div className={styles.listUsers}>
             <h1>Lista de Usúarios</h1>
-            <div className={styles.users}>
-                {Array.from({ length: 18 }).map((index: any) => (
-                    <div className={styles.user} key={index}>
-                        <div className={styles.informationsUser}>
-                            <p><strong>Nome: </strong>Paulo Montefusco</p>
-                            <p><strong>E-mail: </strong>paulomontefusco.junior@gmail.com</p>
-                            <p><strong>Celular: </strong>(11) 97100-6883</p>
-                            <p><strong>Data de Nascimento: </strong>08/01/1998</p>
-                        </div>
-                        <button>Editar</button>
-                    </div>
-                ))}
-            </div>
+            <ListUser data={data} />
         </div>
     );
 }
