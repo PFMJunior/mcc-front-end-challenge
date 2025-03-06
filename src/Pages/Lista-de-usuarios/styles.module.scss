@@ -1,0 +1,72 @@
+.listUsers {
+    box-sizing: border-box;
+    margin: 1.25rem auto;
+    padding: 1.25rem;
+
+    width: 100%;
+    max-width: 1200px;
+
+    h1 {        
+        color: var(--white);
+        font-size: 2.5rem;
+        font-weight: 400;
+
+        margin-bottom: 1.25rem;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .users {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: .938rem;
+
+        .user {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            background-color: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 8px;
+
+            padding: .938rem;
+
+            .informationsUser {
+                p {
+                    color: var(--black);
+                    margin: 5px 0;
+                }
+            }
+
+            button {
+                background-color: var(--orange);
+                border: none;
+                border-radius: 5px;
+
+                color: var(--white);
+                cursor: pointer;
+
+                padding: 8px .938rem;
+                transition: all .35s ease;
+
+                &:hover {
+                    background-color: var(--orange-600);
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .listUsers {
+        h1 {
+            font-size: 2rem;
+        }
+        
+        .users {
+            grid-template-columns: 1fr;
+        }
+    }
+}
