@@ -1,0 +1,46 @@
+.users {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 0.938rem;
+
+    .user {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        background-color: var(--white);
+        border: 1px solid var(--gray-200);
+        border-radius: 8px;
+
+        padding: 0.938rem;
+
+        .informationsUser {
+            p {
+                color: var(--black);
+                margin: 5px 0;
+            }
+        }
+
+        button {
+            background-color: var(--orange);
+            border: none;
+            border-radius: 5px;
+
+            color: var(--white);
+            cursor: pointer;
+
+            padding: 8px 0.938rem;
+            transition: all 0.35s ease;
+
+            &:hover {
+                background-color: var(--orange-600);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .users {
+        grid-template-columns: 1fr;
+    }
+}
