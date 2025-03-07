@@ -4,14 +4,17 @@ export type IDProps = {
 
 export type NameProps = {
     first : string
+    last? : string
 }
 
 export type DobDateProps = {
     date : Date
+    age: string
 }
 
 export type ImageProps = {
     medium : string
+    large? : string
 }
 
 export type UserNameProps = {
@@ -19,17 +22,18 @@ export type UserNameProps = {
     password?: string
 }
 
-export type Data = {
+export type ListUsers = {
     id      : IDProps
     name    : NameProps
     email   : string
     dob     : DobDateProps
     picture : ImageProps
     login   : UserNameProps
+    location: Location;
 }
 
 export type UserProsp = {
-    data : Data[]
+    listUsers : ListUsers[]
 }
 
 export type LoginProps = {
@@ -46,4 +50,24 @@ export type NewUserProps = {
     login: {
         password: string;
     };
+}
+
+interface Street {
+    name :  string,
+    number : number
+}
+
+export type LocationModalProps = {
+    street : Street
+    city : string
+    state : string
+    country : string
+}
+export type ItemModal = {
+    // location: { city: string };  
+    name  : NameProps
+    email : string
+    picture : ImageProps
+    dob     : DobDateProps
+    location: LocationModalProps;
 }
