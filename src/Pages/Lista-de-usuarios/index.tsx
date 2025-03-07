@@ -33,7 +33,7 @@ export function UsersList() {
 
         loadData();
     }, []);
-    console.log("data", data)
+    // console.log("data", data)
 
     if (loading) return <p className={styles.loading}>Carregando...</p>;
     if (error) return <p>Erro: {error.message}</p>;
