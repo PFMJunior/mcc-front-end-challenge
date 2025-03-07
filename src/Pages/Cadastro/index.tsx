@@ -53,7 +53,7 @@ export function Register() {
                         {errors.name?.first && <ErrorMessage message={errors.name?.first.message} />}
                     </div>
                     <div className={styles.input}>
-                        <label>Seu Sobrenom</label>
+                        <label>Seu Sobrenome</label>
                         <input
                             type="text"
                             placeholder="Sobrenome"
