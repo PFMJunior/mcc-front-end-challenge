@@ -14,7 +14,7 @@ export function ListUser({ data }: UserProsp) {
                         <p><strong>Nome de Usúario: </strong>{user.login.username}</p>
                         <p><strong>Data de Nascimento: </strong>{publishedDateFormatted(user.dob.date)}</p>
                     </div>
-                    <button>Editar</button>
+                    <button>Saiba Mais</button>
                 </div>
             ))}
         </div>
