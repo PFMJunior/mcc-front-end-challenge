@@ -1,17 +1,17 @@
 import { useState } from "react";
 import styles from "./styles.module.scss";
 import { ModalListUser } from "../ModalListUser";
-import { UserProsp } from "../../@types/interfaces";
+import { ListUsers, UserProsp } from "../../@types/interfaces";
 import { publishedDateFormatted } from "../../hooks/formatedDate";
 
-export function ListUser({ data }: UserProsp) {
-    const [ openModal, setOpenModal ] = useState(false);
-    const [ modalUser, setModalUser ] = useState('');
+export function ListUser({ listUsers }: UserProsp) {
+    const [ openModal, setOpenModal ] = useState<boolean>(false);
+    const [ modalUser, setModalUser ] = useState<ListUsers | undefined>();
 
     return(
         <>
             <div className={styles.users}>
-                {data && data.map((user) => (
+                {listUsers && listUsers.map((user) => (
                     <div className={styles.user}>
                         <div className={styles.informationsUser} key={user.id.value}>
                             <img src={user.picture.medium} alt="" />
