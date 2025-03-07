@@ -1,11 +1,17 @@
-# React + TypeScript + Vite
+# MCC Front End Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é a solução para o desafio de front-end proposto pela MCC. O objetivo é criar uma interface web para visualizar dados de usuários, fazer logine criar uma conta consumindo uma API pública.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Sumário
+- [Funcionalidades]
+- [TecnologiasUtilizadas]
+- [Pré-requisitos]
+- [Instalação]
+- [Uso]
+- [EstruturaDePastas]
+- [Considerações]
+- [Autor]
+- [Licença]
 
 ## Expanding the ESLint configuration
 
