@@ -29,7 +29,7 @@ export type ListUsers = {
     dob     : DobDateProps
     picture : ImageProps
     login   : UserNameProps
-    location: Location;
+    location: LocationModalProps
 }
 
 export type UserProsp = {
@@ -37,14 +37,14 @@ export type UserProsp = {
 }
 
 export type LoginProps = {
-    email   : string
-    login   : UserNameProps
+    email : string
+    login : UserNameProps
 }
 
 export type NewUserProps = {
     name: {
         first: string;
-        last: string;
+        last : string;
     };
     email: string;
     login: {
@@ -53,21 +53,20 @@ export type NewUserProps = {
 }
 
 interface Street {
-    name :  string,
+    name   :  string,
     number : number
 }
 
 export type LocationModalProps = {
-    street : Street
-    city : string
-    state : string
+    street  : Street
+    city    : string
+    state   : string
     country : string
 }
-export type ItemModal = {
-    // location: { city: string };  
-    name  : NameProps
-    email : string
+export type ItemModal = { 
+    name    : NameProps
+    email   : string
     picture : ImageProps
     dob     : DobDateProps
-    location: LocationModalProps;
+    location: LocationModalProps
 }
