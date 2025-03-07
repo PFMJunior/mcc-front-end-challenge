@@ -67,7 +67,7 @@ Este projeto é a solução para o desafio de front-end proposto pela MCC. O obj
     - senha: casaconstruida
 - 2° => **Verificando o console da página principal e verificar os dados da API *email* e *login.pssword***
     - *Caso escolha essa opção cuidado, oa dados mudam a todo momento*
-3° => **Efetuando um cadastro novo**
+- 3° => **Efetuando um cadastro novo**
 ### Estrutura de Pastas
 ```js
     mcc-front-end-challenge/
