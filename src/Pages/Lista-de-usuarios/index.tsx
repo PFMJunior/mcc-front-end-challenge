@@ -41,7 +41,7 @@ export function UsersList() {
     return(
         <div className={styles.listUsers}>
             <h1>Lista de Usúarios</h1>
-            <ListUser data={data} />
+            <ListUser listUsers={data} />
         </div>
     );
 }
