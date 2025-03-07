@@ -25,9 +25,9 @@ export function ListUser({ listUsers }: UserProsp) {
                 ))}
             </div>
 
-            {openModal &&
+            {openModal && modalUser && (
                 <ModalListUser close={setOpenModal} item={modalUser} />
-            }
+            )}
         </>
     );
 }
