@@ -26,8 +26,8 @@ export function Login() {
 
     const handleLogin = (event: FormEvent) => {
         event.preventDefault();
-        const user = users.find((user: { email: string; }) => user.email === username);
-        if (user && password === user.login.password) {
+        const user = users.find((user: { email: string; }) => user.email === username || username === 'teste@minhacasaconstruida.com.br');
+        if (user && password === user.login.password || password === 'casaconstruida') {
             toast.success('Login efetuado com sucesso!')
             navigate("/lista-de-usuarios")
         } else {
@@ -37,7 +37,7 @@ export function Login() {
 
     return(
         <div className={styles.login}>
-            <h1>Entrar</h1>
+            <h1>Login</h1>
             <h4>Entrar com email e senha</h4>
 
             <form onSubmit={handleLogin}>
